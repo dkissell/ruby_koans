@@ -1,0 +1,34 @@
+#Koan Notes
+
+#Study Splicing Arrays
+
+def test_accessing_array_elements
+    array = [:peanut, :butter, :and, :jelly]
+
+    assert_equal :peanut, array[0]
+    assert_equal :peanut, array.first
+    assert_equal :jelly, array[3]
+    assert_equal :jelly, array.last
+    assert_equal :jelly, array[-1]
+    assert_equal :butter, array[-3]
+ end
+
+
+#Study Ranges
+
+def test_arrays_and_ranges
+    assert_equal Range, (1..5).class
+    assert_not_equal [1,2,3,4,5], (1..5)
+    assert_equal [1,2,3,4,5], (1..5).to_a
+    assert_equa  [1,2,3,4], (1...5).to_a
+end
+
+  def test_changing_hashes
+    hash = { :one => "uno", :two => "dos" }
+    hash[:one] = "eins"
+
+    expected = { :one => false, :two => "dos" }
+    assert_equal false, expected == hash
+
+    # Bonus Question: Why was "expected" broken out into a variable
+    # rather than used as a literal?
